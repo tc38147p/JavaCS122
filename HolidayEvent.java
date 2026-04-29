@@ -1,1 +1,1 @@
-public class HolidayEvent.java {
+public class HolidayEvent extends Event {
