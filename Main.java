@@ -13,6 +13,7 @@ public class Main {
     while (user == null) {
       System.out.println("1. Login");
       System.out.println("2. Create Account");
+      System.out.println("3. Exit");
       System.out.println("Choose: ");
       String choice = sc.nextLine();
 
@@ -20,6 +21,9 @@ public class Main {
         user = manager.login(sc);
       } else if (choice.equals("2")); {
         user = manager.createAccount(sc);
+      } else if (choice.equals("3")); {
+        System.out.print("Have a nice day");
+        break;
       } else {
         System.out.println("Invalid choice.");
       }
