@@ -34,7 +34,7 @@ public class AccountManager {
     System.out.print("Choose a username: ");
     String u = sc.nextLine();
 
-    String p = ""
+    String p = "";
       while (true) {
         System.out.print("Choose a password: ");
         p = sc.nextLine();
