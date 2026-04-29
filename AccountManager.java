@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class AccountManager {
 
-  User[] users = new User[10]
+  User[] users = new User[10];
   int userCount = 0;
 
   public AccountManager() {
