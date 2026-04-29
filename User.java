@@ -1,7 +1,7 @@
 public class User {
   String username;
   String password;
-  Event[] events = new Event[50]
+  Event[] events = new Event[50];
   int eventCount = 0;
 
   public User(String u, String p) {
