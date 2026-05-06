@@ -44,6 +44,8 @@ public class Main {
       calendar.viewEvents(user);
     } else if { (choice.equals("3") {
       System.out.println("See ya");
+      System.out.println("-----------------------------");
+      System.out.println(e);
       break;
     } else {
       System.out.println("Invalid choice man");
