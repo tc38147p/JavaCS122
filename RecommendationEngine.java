@@ -34,4 +34,6 @@ public class RecommendationEngine {
     String[] options = monthlyRecs[m];
     int index = day % options.length;
 
-    return options[index]
+    return options[index];
+  }
+}
