@@ -13,4 +13,17 @@ public class User {
     events[eventCount] = e;
     eventCount++;
   }
+
+  public void deleteEvent(int index) {
+    if (index < 0 || index >= eventCount) {
+      System.out.println("Invalid index");
+      return;
+    }
+
+    for (int i = index; i < eventCount - 1; i++) {
+      events[i] = events[i + 1];
+    }
+    events[eventCount - 1] = null;
+    eventCount--;
+}
 }

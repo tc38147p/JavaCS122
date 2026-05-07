@@ -36,6 +36,7 @@ public class Main {
     System.out.println("1. Schedule an event");
     System.out.println("2. View your events");
     System.out.println("3. Exit");
+    System.out.println("4. Delete an event");
     String choice = sc.nextLine();
 
     if (choice.equals("1")) {
@@ -46,6 +47,9 @@ public class Main {
       System.out.println("See ya");
       System.out.println("-----------------------------");
       calendar.viewEvents(user);
+    }else if (choice.equals("4")) {
+      calendar.deleteEvent(sc, user);
+
       break;
     } else {
       System.out.println("Invalid choice man");

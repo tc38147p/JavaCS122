@@ -96,12 +96,39 @@ public class CalendarSystem {
     System.out.println("Event saved");
   }
   
-  
+  public void deleteEvent(Scanner sc, User user) {
+    if (user.eventCount == 0) {
+        System.out.println("No events to remove.");
+        return;
+    }
+
+    // List all events with an ID
+    System.out.println("\n--- Your Events ---");
+    for (int i = 0; i < user.eventCount; i++) {
+        System.out.println((i + 1) + ". " + user.events[i].getDescription());
+    }
+
+    System.out.print("Enter the number of the event to remove: ");
+    String input = sc.nextLine();
+    
+    if (input.matches("\\d+")) {
+        int choice = Integer.parseInt(input) - 1;
+        if (choice >= 0 && choice < user.eventCount) {
+            user.deleteEvent(choice);
+            System.out.println("Event removed successfully.");
+        } else {
+            System.out.println("Invalid selection.");
+        }
+    } else {
+        System.out.println("Please enter a valid number.");
+    }
+}
+
     // Viewing events (highlighted days)
   
     public void viewEvents(User user) {
       if (user.eventCount == 0) {
-        System.out.println("You hae no event");
+        System.out.println("You have no events");
         return;
     }
   
