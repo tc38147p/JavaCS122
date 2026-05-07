@@ -19,9 +19,9 @@ public class Main {
 
       if (choice.equals("1")) {
         user = manager.login(sc);
-      } else if (choice.equals("2")); {
+      } else if (choice.equals("2")) {
         user = manager.createAccount(sc);
-      } else if (choice.equals("3")); {
+      } else if (choice.equals("3")) {
         System.out.print("Have a nice day");
         break;
       } else {
@@ -40,12 +40,12 @@ public class Main {
 
     if (choice.equals("1")) {
       calendar.scheduleEvent(sc, user);
-    } else if { (choice.equals("2") {
+    } else if  (choice.equals("2")) {
       calendar.viewEvents(user);
-    } else if { (choice.equals("3") {
+    } else if  (choice.equals("3")) {
       System.out.println("See ya");
       System.out.println("-----------------------------");
-      System.out.println(e);
+      calendar.viewEvents(user);
       break;
     } else {
       System.out.println("Invalid choice man");
