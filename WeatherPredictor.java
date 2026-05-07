@@ -16,24 +16,25 @@ public class WeatherPredictor {
     31,  //February
     59,  //March
     90,  //April
-    110,  //May
-    141,  //June
-    170,  //July
-    201,  //August
-    232,  //September
-    262,  //October
-    293,  //November
-    323,  //December
+    120,  //May
+    151,  //June
+    181,  //July
+    212,  //August
+    243,  //September
+    273,  //October
+    304,  //November
+    334,  //December
     
     
 
 
   };
-
+public int getWeekNumber(int month, int day) {
   int dayOfYear = daysBeforeMonth[month - 1] + day;
   return (dayOfYear - 1) / 7;
-
+}
 public String predict(int month, int day) {
   int week = getWeekNumber(month, day);
   return weeklyWeather[week];
+}
 }
