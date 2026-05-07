@@ -9,7 +9,7 @@ public class CalendarSystem {
   public void printMonthWithHighlights(int month, User user) {
     String[] monthNames = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
   
-    int[] daysInmonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    int[] daysInMonth = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
   
     System.out.println("\n    " + monthNames[month - 1] + " 2027");
     System.out.println("Su Mo Tu We Th Fr Sa");
@@ -69,10 +69,10 @@ public class CalendarSystem {
   
     // Show calendar before choosing a day
   
-    printMonth(month);
+    //printMonth(month);
   
     while (true) {
-      System.out.print("Enter a day (1-30(1): ");
+      System.out.print("Enter a day (1-30(1)): ");
       String d = sc.nextLine();
       if (d.matches("\\d+")) {
         day = Integer.parseInt(d);
@@ -94,6 +94,7 @@ public class CalendarSystem {
     user.addEvent(e);
   
     System.out.println("Event saved");
+  }
   
   
     // Viewing events (highlighted days)
