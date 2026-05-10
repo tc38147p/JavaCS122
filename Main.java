@@ -22,14 +22,15 @@ public class Main {
       } else if (choice.equals("2")) {
         user = manager.createAccount(sc);
       } else if (choice.equals("3")) {
-          System.out.println("----------------------");
-        System.out.print("Have a nice day");
-        break;
+        System.out.println("----------------------");
+        System.out.println("Have a nice day");
+        System.out.println("----------------------");
       } else {
         System.out.println("----------------------");
         System.out.println("Invalid choice.");
         System.out.println("----------------------");
       }
+       break;
     }
 
     System.out.println("\nWelcome, " + user.username);
@@ -55,9 +56,10 @@ public class Main {
     }else if (choice.equals("4")) {
       calendar.deleteEvent(sc, user);
 
-      break;
+    
     } else {
       System.out.println("Invalid choice man");
+      break;
     }
   }
 

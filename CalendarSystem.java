@@ -99,6 +99,7 @@ public class CalendarSystem {
   public void deleteEvent(Scanner sc, User user) {
     if (user.eventCount == 0) {
         System.out.println("No events to remove.");
+  
         return;
     }
 
