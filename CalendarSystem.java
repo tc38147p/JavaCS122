@@ -135,6 +135,17 @@ public class CalendarSystem {
         System.out.println("Please enter a valid number.");
     }
 }
+private int getNumber(Scanner sc, String message, int min, int max) {
+  System.out.print(message);
+  String input = sc.nextLine();
+
+  while (!input.matches("\\d+") || Integer.parseInt(input) < min || Integer.parseInt(input) > max) {
+    System.out.println("Invalid input dude, try again...");
+    System.out.print(message);
+    input = sc.nextLine();
+  }
+  return Integer.parseInt(input);
+}
 
     // Viewing events (highlighted days)
   
@@ -146,8 +157,9 @@ public class CalendarSystem {
   
   
     Scanner sc = new Scanner(System.in);
-    System.out.print("Enter a month to view (1-12): ");
-    int month = Integer.parseInt(sc.nextLine());
+   
+    int month = getNumber(sc, "Enter a month to view (1-12): ", 1, 12);
+      
   
     printMonthWithHighlights(month, user);
   
