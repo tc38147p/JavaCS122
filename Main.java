@@ -17,15 +17,19 @@ public class Main {
       System.out.println("Choose: ");
       String choice = sc.nextLine();
 
-      if (choice.equals("1")) {
-        user = manager.login(sc);
-      } else if (choice.equals("2")) {
-        user = manager.createAccount(sc);
-      } else if (choice.equals("3")) {
-        System.out.print("Have a nice day");
-        break;
-      } else {
-        System.out.println("Invalid choice.");
+
+      switch (choice) {
+        case "1":
+          user = manager.login(sc);
+          break;
+        case "2":
+          user = manager.createAccount(sc);
+          break;
+        case "3":
+          System.out.println("Have a nice day!");
+          return;
+        default:
+          System.out.println("Invalid choice, try again man...");
       }
     }
 
@@ -39,25 +43,30 @@ public class Main {
     System.out.println("4. Exit");
     String choice = sc.nextLine();
 
-    if (choice.equals("1")) {
-      calendar.scheduleEvent(sc, user);
-    } else if  (choice.equals("2")) {
-      calendar.viewEvents(user);
-    } else if  (choice.equals("4")) {
-      System.out.println("See ya");
-      System.out.println("-----------------------------");
-      calendar.viewEvents(user);
-    }else if (choice.equals("3")) {
-      calendar.deleteEvent(sc, user);
 
-      break;
-    } else {
-      System.out.println("Invalid choice man");
+    switch (choice) {
+      case "1":
+        calendar.scheduleEvent(sc, user);
+        break;
+      case "2":
+        calendar.viewEvents(user);
+        break;
+      case "3":
+        calendar.deleteEvent(sc, user);
+        break;
+      case "4":
+        System.out.println("See ya!");
+        System.out.println("\n--- Your events ---");
+        for (int i = 0; i < user.eventCount; i++) {
+          System.out.println((i + 1) + ". " + user.events[i].getDescription());
+        }
+        return;
+
+      default:
+        System.out.println("Invalid choice dude......");
     }
   }
-
-  sc.close();
-        }
   }
+}
 
   
