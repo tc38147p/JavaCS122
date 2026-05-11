@@ -23,11 +23,10 @@ public class Main {
         user = manager.createAccount(sc);
       } else if (choice.equals("3")) {
         System.out.print("Have a nice day");
-        break;
+        System.exit(0);
       } else {
         System.out.println("Invalid choice.");
       }
-       break;
     }
 
     
@@ -42,15 +41,14 @@ public class Main {
     if (choice.equals("1")) {
       calendar.scheduleEvent(sc, user);
     } else if  (choice.equals("2")) {
-      calendar.viewEvents(user);
+      calendar.viewEvents(sc, user);
     } else if  (choice.equals("4")) {
+      System.out.println("------------------------------");
       System.out.println("See ya");
       System.out.println("-----------------------------");
-      calendar.viewEvents(user);
-    }else if (choice.equals("3")) {
+      System.exit(0);
+    } else if (choice.equals("3")) {
       calendar.deleteEvent(sc, user);
-
-      break;
     } else {
       System.out.println("Invalid choice man");
     }

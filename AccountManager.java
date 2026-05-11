@@ -42,8 +42,10 @@ public class AccountManager {
         return users[i];
       }
     }
-
+    
+    System.out.println("______________________________");
     System.out.println("Invalid login");
+    System.out.println("______________________________");
     return null;
   }
 

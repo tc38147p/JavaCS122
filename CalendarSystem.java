@@ -150,15 +150,13 @@ private int getNumber(Scanner sc, String message, int min, int max) {
 
     // Viewing events (highlighted days)
   
-    public void viewEvents(User user) {
+    public void viewEvents(Scanner sc, User user) {
       if (user.eventCount == 0) {
         System.out.println("You have no events");
         return;
     }
   
   
-    Scanner sc = new Scanner(System.in);
-   
     int month = getNumber(sc, "Enter a month to view (1-12): ", 1, 12);
       
   
@@ -172,7 +170,6 @@ private int getNumber(Scanner sc, String message, int min, int max) {
         System.out.println(e.getDescription());
       }
     }
-    sc.close();
   }
 }
   
