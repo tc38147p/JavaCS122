@@ -8,9 +8,26 @@ public class AccountManager {
   public AccountManager() {
     // These are the test accounts (Pre-made accounts)
 
-    users[userCount++] = new User("JohnCena", "Youcantseeme123!");
-    users[userCount++] = new User("Tyler", "Password123!@#$");
-    users[userCount++] = new User("Brian", "Password2123!@#$");
+
+    User u1 = new User("JohnCena", "Youcantseeme123!");
+    User u2 = new User("Tyler", "Password123!@#$");
+    User u3 = new User("Brian", "Password2123!@#$");
+    
+    users[userCount++] = u1;
+    users[userCount++] = u2;
+    users[userCount++] = u3;
+
+    u1.addEvent(new Event(2, 4, "Fighting Dwayne"));
+    u1.addEvent(new Event(10, 29, "Halloween shopping"));
+    u1.addEvent(new Event(6, 3, "Becoming invisible and scaring people"));
+
+    u2.addEvent(new Event( 6, 25, "Birthday "));
+    u2.addEvent(new Event( 5, 2, "Meeting up with friends"));
+    u2.addEvent(new Event( 12, 15, "Dinner with family"));
+
+    u3.addEvent(new Event(1, 4, "Scuba diving"));
+    u3.addEvent(new Event(5, 9, "Volcano tour"));
+    u3.addEvent(new Event(12, 24, "Meeting Gojo"));
   }
 
   public User login(Scanner sc) {

@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class CalendarSystem {
   WeatherPredictor weather = new WeatherPredictor();
   RecommendationEngine rec = new RecommendationEngine();
+  HolidayManager holidayManager = new HolidayManager();
 
 // Calendar Printing (No highlights)
 
@@ -22,6 +23,7 @@ public class CalendarSystem {
   
     for (int day = 1; day <= daysInMonth[month - 1]; day++) {
       boolean hasEvent = false;
+      boolean isHoliday = false;
   
       if (user!= null) {
         for (int i = 0; i < user.eventCount; i++) {
@@ -33,8 +35,17 @@ public class CalendarSystem {
           }
         }
       }
-  
-      if (hasEvent) {
+
+      String holidayName = holidayManager.getHoliday(month, day);
+      if (holidayName != null) {
+        isHoliday = true;
+    }
+
+      if (isHoliday) {
+        if (day <10) System.out.print("{" + day + "}");
+          else System.out.print("{" + day + "}");
+      }
+      else if (hasEvent) {
         if (day < 10) System.out.print("[" + day + "]");
         else System.out.print("[" + day + "]");
       } else {
@@ -68,6 +79,7 @@ public class CalendarSystem {
     }
   
     // Show calendar before choosing a day
+    printMonthWithHighlights(month, user);
   
     //printMonth(month);
   
@@ -148,6 +160,7 @@ public class CalendarSystem {
         System.out.println(e.getDescription());
       }
     }
+    sc.close();
   }
 }
   

@@ -25,6 +25,7 @@ public class Main {
         System.out.println("----------------------");
         System.out.println("Have a nice day");
         System.out.println("----------------------");
+        System.exit(0);
       } else {
         System.out.println("----------------------");
         System.out.println("Invalid choice.");
@@ -33,27 +34,26 @@ public class Main {
        break;
     }
 
-    System.out.println("\nWelcome, " + user.username);
-
+    
   while (true) {
     System.out.println("\n--Calendar Menu--");
     System.out.println("1. Schedule an event");
     System.out.println("2. View your events");
-    System.out.println("3. Exit");
-    System.out.println("4. Delete an event");
+    System.out.println("3. Delete an Event");
+    System.out.println("4. Exit");
     String choice = sc.nextLine();
 
     if (choice.equals("1")) {
       calendar.scheduleEvent(sc, user);
     } else if  (choice.equals("2")) {
       calendar.viewEvents(user);
-    } else if  (choice.equals("3")) {
+    } else if  (choice.equals("4")) {
       System.out.println("-----------------------------");
       System.out.println("See ya");
       System.out.println("-----------------------------");
       System.exit(0);
       calendar.viewEvents(user);
-    }else if (choice.equals("4")) {
+    }else if (choice.equals("3")) {
       calendar.deleteEvent(sc, user);
 
     
